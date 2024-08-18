@@ -1,6 +1,5 @@
 import Hero from "@components/Hero";
 import FeaturedProduct from "@components/FeaturedProduct";
-import QuickLinks from "@components/QuickLinks";
 import Testimony from "@components/Testimony";
 
 export default function Home() {
@@ -9,7 +8,6 @@ export default function Home() {
       <Hero />
       <FeaturedProduct />
       <Testimony />
-      <QuickLinks />
     </main>
   );
 }
