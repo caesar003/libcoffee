@@ -225,8 +225,7 @@ body {
   flex-grow: 1;
 }
 
-/* FIX: this somehow does not work */
-.justify-center: {
+.justify-center {
   justify-content: center;
 }
 .justify-between {

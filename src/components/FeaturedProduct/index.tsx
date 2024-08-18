@@ -10,7 +10,7 @@ export default function FeaturedProduct() {
 
   const getProducts = async () => {
     try {
-      const {data} = await instance.get("/api/products");
+      const { data } = await instance.get("/api/products");
       setProducts(data);
     } catch (err) {
       console.log(err);
@@ -29,7 +29,7 @@ export default function FeaturedProduct() {
         {products.map(
           (
             { product, current_retail_price, product_description, imgUrl },
-            idx
+            idx,
           ) => (
             <Card key={idx}>
               <img
@@ -50,7 +50,7 @@ export default function FeaturedProduct() {
                 <button>Add to chart</button>
               </div>
             </Card>
-          )
+          ),
         )}
       </ListWrapper>
     </SectionWrapper>

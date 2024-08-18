@@ -4,9 +4,5 @@ export default function ListWrapper({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <div className="flex wrap gap-4" style={{ justifyContent: "center" }}>
-      {children}
-    </div>
-  );
+  return <div className="flex wrap gap-4 justify-center">{children}</div>;
 }

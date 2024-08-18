@@ -17,11 +17,9 @@ export default function Product() {
     if (_product) setProduct(_product);
   }, [productId]);
 
-
-
   const getProducts = async () => {
     try {
-      const res = await serviceIntance.get("/api/products")
+      const res = await serviceIntance.get("/api/products");
       console.log(res);
     } catch (err) {
       console.log(err);
@@ -30,7 +28,6 @@ export default function Product() {
 
   useEffect(() => {
     getProducts();
-
   }, []);
 
   return (

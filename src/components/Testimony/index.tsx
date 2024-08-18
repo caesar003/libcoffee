@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 import { Testimony as TestimonyInterface } from "@utils/types";
 import instance from "@services/instance";
@@ -9,9 +9,8 @@ import Card from "@components/Card";
 export default function Testimony() {
   const [testimonies, setTestimonies] = useState<TestimonyInterface[]>([]);
   const getTestimonies = async () => {
-
     try {
-      const {data} = await instance.get("/api/testimony");
+      const { data } = await instance.get("/api/testimony");
       setTestimonies(data);
     } catch (err) {
       console.log(err);
