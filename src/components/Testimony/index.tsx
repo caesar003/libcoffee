@@ -5,12 +5,13 @@ import instance from "@services/instance";
 import SectionWrapper from "@components/SectionWrapper";
 import ListWrapper from "@components/ListWrapper";
 import Card from "@components/Card";
+import "./style.css";
 
 export default function Testimony() {
   const [testimonies, setTestimonies] = useState<TestimonyInterface[]>([]);
   const getTestimonies = async () => {
     try {
-      const { data } = await instance.get("/api/testimony");
+      const { data } = await instance.get("/api/testimony?limit=5");
       setTestimonies(data);
     } catch (err) {
       console.log(err);
@@ -28,17 +29,16 @@ export default function Testimony() {
         {testimonies.map((item, index) => (
           <Card key={index}>
             <img
+              className="avatar"
               src={item.imgUrl}
               alt={item.name}
-              style={{
-                width: "65px",
-                borderRadius: "50%",
-                marginBottom: "16px",
-              }}
+
             />
-            <h4>{item.name}</h4>
-            <p>{"⭐".repeat(Math.round(item.star))}</p>
-            <p className="text-center">{item.comment}</p>
+            <div className="flex-1 flex flex-col items-center justify-start gap-2">
+              <h4>{item.name}</h4>
+              <p>{"⭐".repeat(Math.round(item.star))}</p>
+              <p className="text-center">{item.comment}</p>
+            </div>
           </Card>
         ))}
       </ListWrapper>

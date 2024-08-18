@@ -33,6 +33,10 @@
   display: none;
 }
 
+.brand-logo {
+ width: 54px;
+}
+
 @media (max-width: 768px) {
   .nav-links {
     padding: 2em;
@@ -56,3 +60,8 @@
     z-index: 3;
   }
 }
+
+.brand-title {
+  font-size: 1.2em;
+}
+

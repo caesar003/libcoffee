@@ -32,14 +32,9 @@ export default function Nav() {
     <nav className="nav w-screen bg-gray-100">
       <div className="flex justify-between items-center w-full p-4 relative m-auto m-w-1200">
         <div className="flex gap-2 items-center">
-          <img style={{ width: "54px" }} src={logo} alt="logo" />
+          <img className="brand-logo" src={logo} alt="logo" />
           <div className="flex flex-col items-start justify-center">
-            <p
-              className="text-primary"
-              style={{ fontSize: "1.2em", fontWeight: "bold" }}
-            >
-              Libcofee
-            </p>
+            <p className="text-primary font-bold brand-title">Libcofee</p>
             <p className="text-secondary">
               Caffeine for the mind, books for the soul
             </p>

@@ -6,7 +6,7 @@ import serviceInstance from "@services/instance";
 
 export default function Product() {
   const [product, setProduct] = useState<ProductInterface | null>(null);
-  const [error, setError] = useState<string | null>(null); // State to manage error messages
+  const [error, setError] = useState<string | null>(null);
   const { productId } = useParams();
 
   useEffect(() => {
@@ -14,18 +14,20 @@ export default function Product() {
 
     const fetchProduct = async () => {
       try {
-        const response = await serviceInstance.get(`/api/product/${productId}`);
-        
-        if (response.status === 404) { // Handle 404 error
+        const response = await serviceInstance.get(
+          `/api/products/${productId}`
+        );
+
+        if (response.status === 404) {
           setError(`Product with ID ${productId} not found.`);
           setProduct(null);
         } else {
-          setProduct(response.data); // Set product data
-          setError(null); // Clear error if product is found
+          setProduct(response.data);
+          setError(null);
         }
       } catch (err) {
-        setError('An error occurred while fetching the product.'); // Handle other errors
-        console.error(err); // Better error handling
+        setError("An error occurred while fetching the product.");
+        console.error(err);
       }
     };
 
@@ -36,19 +38,16 @@ export default function Product() {
     <main>
       <SectionWrapper id="product">
         {error ? (
-          <p>{error}</p> // Display error message
+          <p>{error}</p>
         ) : (
           <>
             <img
-              src={`/images/products/${product?.imgUrl}`} // Ensure the URL path is correct
-              alt={product?.product || "Product Image"} // Added alt attribute for accessibility
-              style={{
-                maxWidth: "200px",
-                marginBottom: "16px",
-              }}
+              src={`/images/products/${product?.imgUrl}`}
+              alt={product?.product || "Product Image"}
+              className="product-thumbnail"
             />
             <h4>{product?.product}</h4>
-            <p style={{ textAlign: "center" }}>{product?.product_description}</p>
+            <p className="text-center">{product?.product_description}</p>
 
             <div className="flex gap-1 items-center bg-gray-100 p-2">
               <p>{product?.current_retail_price}</p>

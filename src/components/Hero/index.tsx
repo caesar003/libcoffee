@@ -1,14 +1,17 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { ChevronRight, ChevronLeft } from "lucide-react";
-import instance from "@services/instance";
-import { Product as ProductInterface } from "@utils/types"; // Assuming you have a type definition
+import { Product as ProductInterface } from "@utils/types";
 
 import "./style.css";
 
-export default function Hero() {
+export default function Hero({
+  products,
+  isLoading,
+}: {
+  products: ProductInterface[];
+  isLoading: boolean;
+}) {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
-  const [products, setProducts] = useState<ProductInterface[]>([]);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % products.length);
@@ -16,35 +19,20 @@ export default function Hero() {
 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? products.length - 1 : prevIndex - 1,
+      prevIndex === 0 ? products.length - 1 : prevIndex - 1
     );
   };
 
-  const getProducts = async () => {
-    try {
-      const { data } = await instance.get("/api/products");
-      setProducts(data);
-      setIsLoading(false); // Mark as loaded
-    } catch (err) {
-      console.error(err);
-      setIsLoading(false); // Mark as loaded even on error to avoid infinite loading state
-    }
-  };
-
-  useEffect(() => {
-    getProducts();
-  }, []);
-
   if (isLoading) {
-    return <p>Loading...</p>; // You can add a more elaborate loader here
+    return <p>Loading...</p>;
   }
 
   if (products.length === 0) {
-    return <p>No products available.</p>; // Handle the case where no products are returned
+    return <p>No products available.</p>;
   }
 
   return (
-    <section style={{ padding: "1em" }}>
+    <section className="p-4">
       <div className="flex relative m-auto hero-image-wrapper">
         <img
           className="h-full"
