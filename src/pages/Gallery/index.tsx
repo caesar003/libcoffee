@@ -9,10 +9,7 @@ export default function Gallery() {
         <div className="grid-container">
           {images.map((image, index) => {
             return (
-              <div
-                key={index}
-                className="grid-item relative"
-              >
+              <div key={index} className="grid-item relative">
                 <img src={image} alt={`Gallery Image ${index + 1}`} />
               </div>
             );

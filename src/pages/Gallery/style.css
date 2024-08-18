@@ -19,9 +19,8 @@
   object-fit: cover;
 }
 
-/* Media query for small screens */
 @media (max-width: 768px) {
   .grid-container {
-    grid-template-columns: 1fr; /* Make each grid item take up the whole row */
+    grid-template-columns: 1fr; 
   }
 }
