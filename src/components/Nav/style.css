@@ -1,0 +1,58 @@
+.nav-links {
+  list-style-type: none;
+  display: flex;
+  gap: 1em;
+  transition: transform 0.3s ease-in-out; /* Add transition for sliding effect */
+}
+
+.nav-link-item {
+  display: flex;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 1em;
+  color: #333;
+  border-radius: 4px;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+  font-weight: bold;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  background-color: #ffebcd;
+  color: #222;
+}
+
+.nav-button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    padding: 2em;
+    flex-direction: column;
+    position: fixed;
+    width: 50vw;
+    height: 100vh;
+    z-index: 2;
+    top: 0;
+    left: 50%;
+    background: white;
+    transform: translateX(100%); 
+  }
+
+  .nav-links.active {
+    transform: translateX(0%); 
+  }
+
+  .nav-button {
+    display: block;
+    z-index: 3;
+  }
+}

@@ -28,6 +28,7 @@
       "@hooks/*": ["src/hooks/*"],
       "@utils/*": ["src/utils/*"],
       "@interfaces/*": ["src/interfaces/*"],
+      "@pages/*": ["src/pages/*"],
       "@services/*": ["src/services/*"]
     }
   },
