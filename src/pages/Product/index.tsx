@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import SectionWrapper from "@components/SectionWrapper";
 import { Product as ProductInterface } from "@utils/types";
+import serviceIntance from "@services/instance";
 
 import { products } from "@services/mock";
 
@@ -15,6 +16,22 @@ export default function Product() {
 
     if (_product) setProduct(_product);
   }, [productId]);
+
+
+
+  const getProducts = async () => {
+    try {
+      const res = await serviceIntance.get("/api/products")
+      console.log(res);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  useEffect(() => {
+    getProducts();
+
+  }, []);
 
   return (
     <main>

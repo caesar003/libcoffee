@@ -1,9 +1,26 @@
-import { products } from "@services/mock";
+import { useEffect, useState } from "react";
+import instance from "@services/instance";
+import { Product } from "@utils/types";
 import SectionWrapper from "@components/SectionWrapper";
 import ListWrapper from "@components/ListWrapper";
 import Card from "@components/Card";
 
 export default function FeaturedProduct() {
+  const [products, setProducts] = useState<Product[]>([]);
+
+  const getProducts = async () => {
+    try {
+      const {data} = await instance.get("/api/products");
+      setProducts(data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  useEffect(() => {
+    getProducts();
+  }, []);
+
   return (
     <SectionWrapper id="featured-products">
       <h3>Featured Products</h3>
@@ -12,7 +29,7 @@ export default function FeaturedProduct() {
         {products.map(
           (
             { product, current_retail_price, product_description, imgUrl },
-            idx,
+            idx
           ) => (
             <Card key={idx}>
               <img
@@ -33,7 +50,7 @@ export default function FeaturedProduct() {
                 <button>Add to chart</button>
               </div>
             </Card>
-          ),
+          )
         )}
       </ListWrapper>
     </SectionWrapper>

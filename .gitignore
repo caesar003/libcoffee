@@ -27,3 +27,5 @@ tags
 
 notes/
 *.txt
+
+.env
