@@ -56,10 +56,7 @@ export default function About() {
                 />
               </div>
 
-              <div
-                className="story-wrapper"
-                style={{ order: isEven ? 2 : 1 }}
-              >
+              <div className="story-wrapper" style={{ order: isEven ? 2 : 1 }}>
                 <h3>{story.title}</h3>
                 <p>{story.description}</p>
               </div>
