@@ -736,7 +736,7 @@ input[type="submit"]:hover {
   max-width: 200px;
 }
 
-.card {
+._card {
   width: 300px;
   min-height: 320px;
   border: 1px solid #ccc;
@@ -785,12 +785,9 @@ input[type="submit"]:hover {
   list-style-type: none;
   display: flex;
   gap: 1em;
-  transition: transform 0.3s ease-in-out; /* Add transition for sliding effect */
+  transition: transform 0.3s ease-in-out; 
 }
 
-.nav-link-item {
-  display: flex;
-}
 
 .nav-links a {
   text-decoration: none;
@@ -801,12 +798,18 @@ input[type="submit"]:hover {
     background-color 0.3s ease,
     color 0.3s ease;
   font-weight: bold;
+  padding: 0.5em 1em;
+  border-radius: 4px;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
   background-color: #ffebcd;
   color: #222;
+}
+
+.cart-button {
+
 }
 
 .nav-button {
@@ -865,7 +868,7 @@ input[type="submit"]:hover {
   gap: 20px;
 }
 
-.product-card {
+._product-card {
   border: 1px solid #ddd;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);

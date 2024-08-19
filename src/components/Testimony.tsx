@@ -4,7 +4,7 @@ import { Testimony as TestimonyInterface } from "@utils/types";
 import instance from "@services/instance";
 import SectionWrapper from "@components/SectionWrapper";
 import ListWrapper from "@components/ListWrapper";
-import Card from "@components/Card";
+import Card, { CardAvatar, CardContent } from "@components/Card";
 
 export default function Testimony() {
   const [testimonies, setTestimonies] = useState<TestimonyInterface[]>([]);
@@ -27,12 +27,14 @@ export default function Testimony() {
       <ListWrapper>
         {testimonies.map((item, index) => (
           <Card key={index}>
-            <img className="avatar" src={item.imgUrl} alt={item.name} />
-            <div className="flex-1 flex flex-col items-center justify-start gap-2">
-              <h4>{item.name}</h4>
-              <p>{"⭐".repeat(Math.round(item.star))}</p>
+            <CardAvatar src={item.imgUrl} alt={item.name} />
+            <CardContent>
+              <h4 className="text-center my-2">{item.name}</h4>
+              <p className="text-center my-2">
+                {"⭐".repeat(Math.round(item.star))}
+              </p>
               <p className="text-center">{item.comment}</p>
-            </div>
+            </CardContent>
           </Card>
         ))}
       </ListWrapper>

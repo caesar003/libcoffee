@@ -1,3 +1,5 @@
+import React from "react";
+import { LucideProps } from "lucide-react";
 export interface Product {
   product_id: number;
   product_group: string;
@@ -26,4 +28,11 @@ export interface Testimony {
   star: number;
   comment: string;
   imgUrl: string;
+}
+
+export interface LinkInterface {
+  path: string;
+  Icon: React.FC<LucideProps>;
+  label: string;
+  isActive: boolean;
 }

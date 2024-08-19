@@ -29,6 +29,7 @@
       "@utils/*": ["src/utils/*"],
       "@interfaces/*": ["src/interfaces/*"],
       "@pages/*": ["src/pages/*"],
+      "@context/*": ["src/context/*"],
       "@services/*": ["src/services/*"]
     }
   },

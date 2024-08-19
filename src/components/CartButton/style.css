@@ -1,0 +1,103 @@
+.cart-button-container {
+  position: relative; 
+}
+
+.cart-button {
+  background-color: #4CAF50; 
+  border: none; 
+  color: white; 
+  padding: 10px; 
+  text-align: center; 
+  display: inline-flex; 
+  align-items: center; 
+  justify-content: center; 
+  cursor: pointer; 
+  border-radius: 4px; 
+  position: relative; 
+}
+
+.cart-button:hover {
+  background-color: #45a049; 
+}
+
+.cart-button:active {
+  background-color: #3e8e41; 
+}
+
+.icon-container {
+  position: relative; 
+}
+
+.cart-button svg {
+  width: 24px;
+  height: 24px;
+}
+
+.badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: red; 
+  border-radius: 50%; 
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badge svg {
+  width: 10px;
+  height: 10px;
+  color: white; 
+}
+
+.menu-list {
+  position: absolute;
+  top: 40px; 
+  right: 0;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  list-style-type: none;
+  margin: 0;
+  min-width: 160px; 
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.menu-item:hover {
+  background-color: #f1f1f1;
+}
+
+.delete-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 10px;
+}
+
+.delete-button svg {
+  width: 16px;
+  height: 16px;
+  color: #888; 
+}
+
+.delete-button:hover svg {
+  color: #e74c3c; 
+}
+.empty-cart-message {
+  color: #888;
+  font-style: italic;
+  padding: 8px 12px;
+  text-align: center;
+}

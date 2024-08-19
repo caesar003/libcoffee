@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import { AppProvider } from "@context/AppContext";
 import Layout from "./Layout";
 
 import About from "@pages/About";
@@ -11,7 +12,7 @@ import NotFound from "@pages/NotFound";
 
 function App() {
   return (
-    <>
+    <AppProvider>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="/" element={<Home />} />
@@ -23,7 +24,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
-    </>
+    </AppProvider>
   );
 }
 
