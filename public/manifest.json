@@ -1,0 +1,22 @@
+{
+  "name": "LibCoffee",
+  "short_name": "LibCoffee",
+  "description": "Caffeine for the mind, Books for the soul",
+  "id": "/",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#efefef",
+  "theme_color": "#efefef",
+  "icons": [
+    {
+      "src": "/app-icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/app-icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
