@@ -2,8 +2,6 @@ import { useState } from "react";
 import { ChevronRight, ChevronLeft } from "lucide-react";
 import { Product as ProductInterface } from "@utils/types";
 
-import "./style.css";
-
 export default function Hero({
   products,
   isLoading,
@@ -19,7 +17,7 @@ export default function Hero({
 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? products.length - 1 : prevIndex - 1
+      prevIndex === 0 ? products.length - 1 : prevIndex - 1,
     );
   };
 

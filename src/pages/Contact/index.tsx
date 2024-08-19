@@ -1,5 +1,4 @@
 import SectionWrapper from "@components/SectionWrapper";
-import "./style.css";
 
 export default function Contact() {
   return (

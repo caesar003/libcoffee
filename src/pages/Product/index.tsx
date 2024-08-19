@@ -15,7 +15,7 @@ export default function Product() {
     const fetchProduct = async () => {
       try {
         const response = await serviceInstance.get(
-          `/api/products/${productId}`
+          `/api/products/${productId}`,
         );
 
         if (response.status === 404) {

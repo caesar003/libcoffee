@@ -3,7 +3,6 @@ import { Product } from "@utils/types";
 import SectionWrapper from "@components/SectionWrapper";
 import ListWrapper from "@components/ListWrapper";
 import Card from "@components/Card";
-import "./style.css";
 
 export default function ProductList({
   products,
@@ -46,7 +45,7 @@ export default function ProductList({
                 </Link>
               </div>
             </Card>
-          )
+          ),
         )}
       </ListWrapper>
     </SectionWrapper>

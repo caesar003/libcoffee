@@ -11,8 +11,6 @@ import {
   Info,
 } from "lucide-react";
 
-import "./style.css";
-
 const links = [
   { path: "/", label: "Home", Icon: House },
   { path: "/product", label: "Our Products", Icon: Coffee },

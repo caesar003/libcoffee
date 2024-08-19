@@ -10,7 +10,6 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   const getProducts = async () => {
-    
     try {
       const { data } = await instance.get("/api/products?is_featured=true");
       setFeaturedProducts(data);

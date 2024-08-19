@@ -5,7 +5,6 @@ import instance from "@services/instance";
 import SectionWrapper from "@components/SectionWrapper";
 import ListWrapper from "@components/ListWrapper";
 import Card from "@components/Card";
-import "./style.css";
 
 export default function Testimony() {
   const [testimonies, setTestimonies] = useState<TestimonyInterface[]>([]);
@@ -28,12 +27,7 @@ export default function Testimony() {
       <ListWrapper>
         {testimonies.map((item, index) => (
           <Card key={index}>
-            <img
-              className="avatar"
-              src={item.imgUrl}
-              alt={item.name}
-
-            />
+            <img className="avatar" src={item.imgUrl} alt={item.name} />
             <div className="flex-1 flex flex-col items-center justify-start gap-2">
               <h4>{item.name}</h4>
               <p>{"⭐".repeat(Math.round(item.star))}</p>
