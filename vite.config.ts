@@ -1,9 +1,8 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import path from "path";
+import purgecss from '@fullhuman/postcss-purgecss';
 
-
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
   resolve: {
@@ -19,4 +18,14 @@ export default defineConfig({
       "@services": path.resolve(__dirname, "src/services"),
     },
   },
+  css: {
+    postcss: {
+      plugins: [
+        purgecss({
+          content: ['./index.html', './src/**/*.{ts,tsx,jsx,js}'],
+          defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || []
+        })
+      ]
+    }
+  }
 });
