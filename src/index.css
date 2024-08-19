@@ -629,8 +629,6 @@ body {
   font-weight: bold;
 }
 
-
-
 .testimony-segment {
   display: flex;
   flex-direction: row;
@@ -673,7 +671,8 @@ body {
   }
 }
 
-input, textarea {
+input,
+textarea {
   width: 100%;
   padding: 12px 20px;
   display: inline-block;
@@ -682,9 +681,9 @@ input, textarea {
   box-sizing: border-box;
 }
 
-input[type=submit] {
+input[type="submit"] {
   width: 100%;
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   padding: 14px 20px;
   border: none;
@@ -692,12 +691,9 @@ input[type=submit] {
   cursor: pointer;
 }
 
-input[type=submit]:hover {
+input[type="submit"]:hover {
   background-color: #45a049;
 }
-
-
-
 
 /* Gallery.css */
 
@@ -722,11 +718,9 @@ input[type=submit]:hover {
 
 @media (max-width: 768px) {
   .grid-container {
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr;
   }
 }
-
-
 
 .not-found-title {
   font-size: 6em;
@@ -738,13 +732,9 @@ input[type=submit]:hover {
   font-style: italic;
 }
 
-
-
 .product-thumbnail {
   max-width: 200px;
 }
-
-
 
 .card {
   width: 300px;
@@ -759,9 +749,6 @@ input[type=submit]:hover {
   justify-content: space-between;
   gap: 0.75em;
 }
-
-
-
 
 .hero-image-wrapper {
   aspect-ratio: 16/9;
@@ -793,8 +780,6 @@ input[type=submit]:hover {
 .carousel-button.next {
   right: 5px;
 }
-
-
 
 .nav-links {
   list-style-type: none;
@@ -832,7 +817,7 @@ input[type=submit]:hover {
 }
 
 .brand-logo {
- width: 54px;
+  width: 54px;
 }
 
 @media (max-width: 768px) {
@@ -846,11 +831,11 @@ input[type=submit]:hover {
     top: 0;
     left: 50%;
     background: white;
-    transform: translateX(100%); 
+    transform: translateX(100%);
   }
 
   .nav-links.active {
-    transform: translateX(0%); 
+    transform: translateX(0%);
   }
 
   .nav-button {
@@ -862,9 +847,6 @@ input[type=submit]:hover {
 .brand-title {
   font-size: 1.2em;
 }
-
-
-
 
 .section-wrapper {
   padding: 20px;
@@ -946,7 +928,6 @@ input[type=submit]:hover {
 .add-to-cart-button:hover {
   background-color: #0056b3;
 }
-
 
 .avatar {
   width: 65px;
